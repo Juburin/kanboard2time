@@ -9,12 +9,13 @@ else {
 }
 function releasetheKraken() {
     /* create the element */
-    var h2 = $('.task-show-details h2').first().text(),
+    var h2 = $('#task-summary h2').first().text(),
+    tasknumber = $(".sidebar h2").text().replace("Task ",""),
     options = "";
     $('.subtasks-table tr td:first-child a').each(function(){
         options += "<option>" + $(this).text() + "</option>";
     });
-    var $container = $('<div id="kanboard2time"><p id="kanboard2time-text" style="margin: 1em 0;">' + h2 + '</p></div>'),
+    var $container = $('<div id="kanboard2time"><p id="kanboard2time-text" style="margin: 1em 0;">' + tasknumber + " " + h2 + '</p></div>'),
         $close = $('<a id="kanboard2time-close" href="#">X</a>'),
         $select = $('<select name="task" id="task_selector"><option></option>'+options+'</select>');
     $container.append($close);
@@ -34,7 +35,7 @@ function releasetheKraken() {
         right: '40%',
         width: '180px',
         minHeight: '70px',
-        backgroundColor: '#FE7A15',
+        backgroundColor: '#06aa70',
         padding: '10px',
         MozBoxShadow: '2px 2px 5px #000000',
         WebkitBoxShadow: '2px 2px 5px black',
