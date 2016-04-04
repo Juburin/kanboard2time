@@ -10,8 +10,9 @@ else {
 function releasetheKraken() {
     /* create the element */
     var h2 = $('#task-summary h2').first().text(),
-    tasknumber = $(".sidebar h2").text().replace("Task ",""),
+    tasknumber = $(".sidebar h2").first().text(),
     options = "";
+    tasknumber = '#'+tasknumber.substring(tasknumber.indexOf("#") + 1);
     $('.subtasks-table tr td:first-child a').each(function(){
         options += "<option>" + $(this).text() + "</option>";
     });
